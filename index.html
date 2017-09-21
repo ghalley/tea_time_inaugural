@@ -7,7 +7,7 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/solarized.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,8 +24,62 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h1>Tea Time</h1>
+					<h5 class="fragment">What you're excited about</h5>
+
+					<aside class="notes">
+						Things one can talk about:<br>
+						- Things you do at work<br>
+						- Hobbies<br>
+						- Subjects you're knowledgeable about
+					</aside>
+				</section>
+
+				<section>
+					<h2>Cafecito Bot</h2>
+
+					<ul>
+						<li>Slack Slash Commands</li>
+						<li>Cafecito API</li>
+						<li>Flickr Album</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Slack Slash Commands</h2>
+
+					<section>
+						<img src="images/slack custom integrations.png">
+					</section>
+					<section>
+						<img src="images/integration settings.png">
+					</section>
+				</section>
+
+				<section>
+					<h2>Cafecito API</h2>
+					<section>
+						<pre class="fragment"><code class="ruby">
+holiday = Holiday.new
+
+if holiday.holiday?
+  find_tag(holiday.holiday_tag)
+elsif params[:text].present?
+  find_tag(params[:text])
+elsif check_weekday
+else
+  remove_tags(holiday.holiday_list.values)
+  @photos = @photos.select { |p| p['tags'].include?('cafecito') }
+end
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>Flickr Album</h2>
+					<a data-flickr-embed="true" data-header="true"  href="https://www.flickr.com/gp/151552917@N06/NX44et" title="Cafecito"><img src="https://farm1.staticflickr.com/664/32404333932_6cd1c5c81b.jpg" width="500" height="500" alt="Cafecito"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+				</section>
 			</div>
 		</div>
 
