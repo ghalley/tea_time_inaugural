@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Tea Time/Cafecito Bot</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/solarized.css">
@@ -40,9 +40,9 @@
 					<h2>Cafecito Bot</h2>
 
 					<ul>
-						<li>Slack Slash Commands</li>
-						<li>Cafecito API</li>
-						<li>Flickr Album</li>
+						<li class="fragment">Slack Slash Commands</li>
+						<li class="fragment">Cafecito API</li>
+						<li class="fragment">Flickr Album</li>
 					</ul>
 				</section>
 
@@ -51,9 +51,21 @@
 
 					<section>
 						<img src="images/slack custom integrations.png">
+						<aside class="notes">
+							Slash commands like /mario and /cafecito can be built and customized here
+					</aside>
 					</section>
 					<section>
 						<img src="images/integration settings.png">
+						<aside class="notes">
+						Specify the command<br>
+						Specify the url to send a request to<br>
+						- this is where you can send an authed request to, where your application awaits<br>
+						Select an request method<br>
+						- different verbs allow differently formated information<br>
+						- POST allows me to send auth info as body of post instead of in URL as route or parameter<br>
+
+					</aside>
 					</section>
 				</section>
 
@@ -73,12 +85,23 @@ else
   @photos = @photos.select { |p| p['tags'].include?('cafecito') }
 end
 						</code></pre>
+						<aside class="notes">
+						Holiday gem figures out if today is a holiday, based on customizable set of holidays<br>
+						Params[:text] searches for any pics with a tag matching the search text<br>
+						Also check weekday<br>
+						If no matches, eliminate pics with holiday or weekday tags<br>
+						After limiting set, choose one at ranmdom
+					</aside>
 					</section>
 				</section>
 
 				<section>
 					<h2>Flickr Album</h2>
 					<a data-flickr-embed="true" data-header="true"  href="https://www.flickr.com/gp/151552917@N06/NX44et" title="Cafecito"><img src="https://farm1.staticflickr.com/664/32404333932_6cd1c5c81b.jpg" width="500" height="500" alt="Cafecito"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+					<aside class="notes">
+						Images collected from Cafe Bustelo's Social Media pages and internet<br>
+						Collected into album and tagged for holidays, special content, and weekdays
+					</aside>
 				</section>
 			</div>
 		</div>
